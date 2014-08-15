@@ -1,0 +1,306 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4E3AF383196637500016EF4F /* DLLDatabaseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3AF376196637500016EF4F /* DLLDatabaseUtil.m */; };
+		4E3AF384196637500016EF4F /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3AF37A196637500016EF4F /* FMDatabase.m */; };
+		4E3AF385196637500016EF4F /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3AF37C196637500016EF4F /* FMDatabaseAdditions.m */; };
+		4E3AF386196637500016EF4F /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3AF37E196637500016EF4F /* FMDatabasePool.m */; };
+		4E3AF387196637500016EF4F /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3AF380196637500016EF4F /* FMDatabaseQueue.m */; };
+		4E3AF388196637500016EF4F /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3AF382196637500016EF4F /* FMResultSet.m */; };
+		4E66EB7419371EF000BBDEE8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E66EB7319371EF000BBDEE8 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4E66EB6E19371EF000BBDEE8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4E3AF374196637500016EF4F /* DLLDatabaseUtil-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DLLDatabaseUtil-Prefix.pch"; sourceTree = "<group>"; };
+		4E3AF375196637500016EF4F /* DLLDatabaseUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLLDatabaseUtil.h; sourceTree = "<group>"; };
+		4E3AF376196637500016EF4F /* DLLDatabaseUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLLDatabaseUtil.m; sourceTree = "<group>"; };
+		4E3AF379196637500016EF4F /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		4E3AF37A196637500016EF4F /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		4E3AF37B196637500016EF4F /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		4E3AF37C196637500016EF4F /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		4E3AF37D196637500016EF4F /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		4E3AF37E196637500016EF4F /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		4E3AF37F196637500016EF4F /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		4E3AF380196637500016EF4F /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		4E3AF381196637500016EF4F /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		4E3AF382196637500016EF4F /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		4E66EB7019371EF000BBDEE8 /* libDLLDatabaseUtil.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDLLDatabaseUtil.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E66EB7319371EF000BBDEE8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4EDF0871195804A3002FA8CC /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4E66EB6D19371EF000BBDEE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E66EB7419371EF000BBDEE8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4E3AF373196637500016EF4F /* DLLDatabaseUtil */ = {
+			isa = PBXGroup;
+			children = (
+				4E3AF374196637500016EF4F /* DLLDatabaseUtil-Prefix.pch */,
+				4E3AF375196637500016EF4F /* DLLDatabaseUtil.h */,
+				4E3AF376196637500016EF4F /* DLLDatabaseUtil.m */,
+				4E3AF377196637500016EF4F /* Libs */,
+			);
+			path = DLLDatabaseUtil;
+			sourceTree = "<group>";
+		};
+		4E3AF377196637500016EF4F /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				4E3AF378196637500016EF4F /* FMDB */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		4E3AF378196637500016EF4F /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				4E3AF379196637500016EF4F /* FMDatabase.h */,
+				4E3AF37A196637500016EF4F /* FMDatabase.m */,
+				4E3AF37B196637500016EF4F /* FMDatabaseAdditions.h */,
+				4E3AF37C196637500016EF4F /* FMDatabaseAdditions.m */,
+				4E3AF37D196637500016EF4F /* FMDatabasePool.h */,
+				4E3AF37E196637500016EF4F /* FMDatabasePool.m */,
+				4E3AF37F196637500016EF4F /* FMDatabaseQueue.h */,
+				4E3AF380196637500016EF4F /* FMDatabaseQueue.m */,
+				4E3AF381196637500016EF4F /* FMResultSet.h */,
+				4E3AF382196637500016EF4F /* FMResultSet.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		4E66EB6719371EF000BBDEE8 = {
+			isa = PBXGroup;
+			children = (
+				4E3AF373196637500016EF4F /* DLLDatabaseUtil */,
+				4E66EB7219371EF000BBDEE8 /* Frameworks */,
+				4E66EB7119371EF000BBDEE8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4E66EB7119371EF000BBDEE8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E66EB7019371EF000BBDEE8 /* libDLLDatabaseUtil.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4E66EB7219371EF000BBDEE8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4EDF0871195804A3002FA8CC /* libsqlite3.dylib */,
+				4E66EB7319371EF000BBDEE8 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4E66EB6F19371EF000BBDEE8 /* DLLDatabaseUtil */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E66EB9319371EF100BBDEE8 /* Build configuration list for PBXNativeTarget "DLLDatabaseUtil" */;
+			buildPhases = (
+				4E66EB6C19371EF000BBDEE8 /* Sources */,
+				4E66EB6D19371EF000BBDEE8 /* Frameworks */,
+				4E66EB6E19371EF000BBDEE8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DLLDatabaseUtil;
+			productName = DatabaseUtil;
+			productReference = 4E66EB7019371EF000BBDEE8 /* libDLLDatabaseUtil.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4E66EB6819371EF000BBDEE8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = DLL;
+			};
+			buildConfigurationList = 4E66EB6B19371EF000BBDEE8 /* Build configuration list for PBXProject "DLLDatabaseUtil" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4E66EB6719371EF000BBDEE8;
+			productRefGroup = 4E66EB7119371EF000BBDEE8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4E66EB6F19371EF000BBDEE8 /* DLLDatabaseUtil */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4E66EB6C19371EF000BBDEE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E3AF388196637500016EF4F /* FMResultSet.m in Sources */,
+				4E3AF387196637500016EF4F /* FMDatabaseQueue.m in Sources */,
+				4E3AF383196637500016EF4F /* DLLDatabaseUtil.m in Sources */,
+				4E3AF386196637500016EF4F /* FMDatabasePool.m in Sources */,
+				4E3AF384196637500016EF4F /* FMDatabase.m in Sources */,
+				4E3AF385196637500016EF4F /* FMDatabaseAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4E66EB9119371EF100BBDEE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4E66EB9219371EF100BBDEE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4E66EB9419371EF100BBDEE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/DLLDatabaseUtil.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DLLDatabaseUtil/DLLDatabaseUtil-Prefix.pch";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = DLLDatabaseUtil;
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv7 armv7s arm64";
+			};
+			name = Debug;
+		};
+		4E66EB9519371EF100BBDEE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/DLLDatabaseUtil.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DLLDatabaseUtil/DLLDatabaseUtil-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = DLLDatabaseUtil;
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv7 armv7s arm64";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4E66EB6B19371EF000BBDEE8 /* Build configuration list for PBXProject "DLLDatabaseUtil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E66EB9119371EF100BBDEE8 /* Debug */,
+				4E66EB9219371EF100BBDEE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E66EB9319371EF100BBDEE8 /* Build configuration list for PBXNativeTarget "DLLDatabaseUtil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E66EB9419371EF100BBDEE8 /* Debug */,
+				4E66EB9519371EF100BBDEE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4E66EB6819371EF000BBDEE8 /* Project object */;
+}
