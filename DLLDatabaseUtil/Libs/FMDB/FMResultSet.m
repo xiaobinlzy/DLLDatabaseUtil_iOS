@@ -131,9 +131,7 @@
             
             NSString *columnName = [NSString stringWithUTF8String:sqlite3_column_name([_statement statement], columnIdx)];
             id objectValue = [self objectForColumnIndex:columnIdx];
-            if (![objectValue isKindOfClass:[NSNull class]]) {
-                [dict setObject:objectValue forKey:columnName];
-            }
+            [dict setObject:objectValue forKey:columnName];
         }
         
         return dict;
