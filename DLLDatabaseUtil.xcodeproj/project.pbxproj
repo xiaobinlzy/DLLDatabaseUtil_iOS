@@ -13,6 +13,7 @@
 		4E3AF386196637500016EF4F /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3AF37E196637500016EF4F /* FMDatabasePool.m */; };
 		4E3AF387196637500016EF4F /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3AF380196637500016EF4F /* FMDatabaseQueue.m */; };
 		4E3AF388196637500016EF4F /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3AF382196637500016EF4F /* FMResultSet.m */; };
+		4E5734DC1A4D5EB9003D9241 /* DLLDatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5734DB1A4D5EB9003D9241 /* DLLDatabaseHelper.m */; };
 		4E66EB7419371EF000BBDEE8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E66EB7319371EF000BBDEE8 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,8 @@
 		4E3AF380196637500016EF4F /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
 		4E3AF381196637500016EF4F /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		4E3AF382196637500016EF4F /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		4E5734DA1A4D5EB9003D9241 /* DLLDatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLLDatabaseHelper.h; sourceTree = "<group>"; };
+		4E5734DB1A4D5EB9003D9241 /* DLLDatabaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLLDatabaseHelper.m; sourceTree = "<group>"; };
 		4E66EB7019371EF000BBDEE8 /* libDLLDatabaseUtil.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDLLDatabaseUtil.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E66EB7319371EF000BBDEE8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4EDF0871195804A3002FA8CC /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -62,6 +65,8 @@
 		4E3AF373196637500016EF4F /* DLLDatabaseUtil */ = {
 			isa = PBXGroup;
 			children = (
+				4E5734DA1A4D5EB9003D9241 /* DLLDatabaseHelper.h */,
+				4E5734DB1A4D5EB9003D9241 /* DLLDatabaseHelper.m */,
 				4E3AF374196637500016EF4F /* DLLDatabaseUtil-Prefix.pch */,
 				4E3AF375196637500016EF4F /* DLLDatabaseUtil.h */,
 				4E3AF376196637500016EF4F /* DLLDatabaseUtil.m */,
@@ -177,6 +182,7 @@
 				4E3AF383196637500016EF4F /* DLLDatabaseUtil.m in Sources */,
 				4E3AF386196637500016EF4F /* FMDatabasePool.m in Sources */,
 				4E3AF384196637500016EF4F /* FMDatabase.m in Sources */,
+				4E5734DC1A4D5EB9003D9241 /* DLLDatabaseHelper.m in Sources */,
 				4E3AF385196637500016EF4F /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
