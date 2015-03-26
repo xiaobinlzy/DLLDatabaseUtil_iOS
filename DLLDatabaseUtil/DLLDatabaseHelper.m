@@ -11,11 +11,11 @@
 
 
 
-#define kDatabaseVersion @"database_version"
-#define TABLE_PROPERTY @"property"
+#define kDatabaseVersion @"dlldatabaseutil_database_version"
+#define TABLE_PROPERTY @"dlldatabaseutil_property"
 
 
-#define TABLE_CACHE @"infomation_cache"
+#define TABLE_CACHE @"dlldatabaseutil_infomation_cache"
 
 
 
@@ -24,11 +24,12 @@
 
 
 
-- (instancetype)initWithDatabaseName:(NSString *)name andVersion:(NSInteger)version
+- (instancetype)initWithDatabaseName:(NSString *)name fileName:(NSString *)fileName andVersion:(NSUInteger)version
 {
     self = [self init];
     if (self) {
-        _name = [name copy];
+        _dbName = [name copy];
+        _dbFileName = [fileName copy];
         _version = version;
         [self checkDatabase];
     }
@@ -39,6 +40,8 @@
 - (void)dealloc
 {
     [_databaseUtil release];
+    [_dbName release];
+    [_dbFileName release];
     [super dealloc];
 }
 
@@ -52,8 +55,8 @@
 - (void)checkDatabase
 {
     [_databaseUtil release];
-    [_databaseUtil = [DLLDatabaseUtil alloc] initWithFilePath:[[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:_name]];
-    NSInteger dbVersion = 0;
+    [_databaseUtil = [DLLDatabaseUtil alloc] initWithFilePath:[[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@", _dbName, _dbFileName]]];
+    NSUInteger dbVersion = UINT32_MAX;
     BOOL isFileExists = [[NSFileManager defaultManager] fileExistsAtPath:[_databaseUtil filePath]];
     if (isFileExists) {
         dbVersion = [[self propertyForKey:kDatabaseVersion] integerValue];
@@ -62,10 +65,10 @@
         return;
     }
     
-    if (dbVersion == 0 || !isFileExists) {
+    if (dbVersion == UINT32_MAX || !isFileExists) {
         [self deleteDatabaseFile];
         if ([self createDatabase]) {
-            [_databaseUtil executeSQL:@"create table if not exists 'property' ('key' text primary key, 'value' text)"];
+            [_databaseUtil executeSQL:[NSString stringWithFormat:@"create table if not exists '%@' ('key' text primary key, 'value' text)", TABLE_PROPERTY]];
             [self setProperty:[NSString stringWithFormat:@"%d", (int)_version] forKey:kDatabaseVersion];
         }
         return;
@@ -82,9 +85,11 @@
 }
 
 
-- (BOOL)createDatabase
-{
-    return YES;
+- (BOOL)createDatabase {
+    BOOL result = YES;
+    result &= [_databaseUtil executeSQL:[NSString stringWithFormat:@"create table if not exists '%@' ('type' text primary key, 'info' text, 'time_line' integer)", TABLE_CACHE]];
+    result &= [_databaseUtil executeSQL:[NSString stringWithFormat:@"create index if not exists '%@_index' on '%@' ('type', 'time_line')", TABLE_CACHE, TABLE_CACHE]];
+    return result;
 }
 
 
@@ -123,10 +128,10 @@
     }
 }
 
-- (DatabaseCache *)cacheForType:(NSString *)type
+- (DLLDatabaseCache *)cacheForType:(NSString *)type
 {
     NSArray *resultArray = [_databaseUtil queryTable:TABLE_CACHE columns:nil withExtra:[NSString stringWithFormat:@"where \"type\"=\"%@\"", type] extraArg:nil];
-    return resultArray.count > 0 ? [DatabaseCache cacheObjectWithDatabaseDictionary:[resultArray firstObject]] : nil;
+    return resultArray.count > 0 ? [DLLDatabaseCache cacheObjectWithDatabaseDictionary:[resultArray firstObject]] : nil;
 }
 
 
@@ -138,7 +143,7 @@
 @end
 
 
-@implementation DatabaseCache
+@implementation DLLDatabaseCache
 
 @synthesize type = _type;
 @synthesize info = _info;
@@ -161,10 +166,6 @@
     return self;
 }
 
-- (NSMutableDictionary *)JSONDictionary
-{
-    return [NSMutableDictionary dictionaryWithObjectsAndKeys:self.type, @"type", self.info, @"info", [NSString stringWithFormat:@"%lld", (long long) self.timeLine], @"time_line", nil];
-}
 
 
 

@@ -195,6 +195,7 @@
 
 #if SQLITE_VERSION_NUMBER >= 3007017
 
+#if TARGET_OS_MAC && !TARGET_OS_IPHONE
 ///-----------------------------------
 /// @name Application identifier tasks
 ///-----------------------------------
@@ -234,6 +235,7 @@
  */
 
 - (void)setApplicationIDString:(NSString*)string;
+#endif
 #endif
 
 

@@ -10,7 +10,6 @@
 
 @implementation DLLDatabaseUtil
 
-static DLLDatabaseUtil * __databaseUtil;
 
 - (void)dealloc
 {
@@ -22,11 +21,11 @@ static DLLDatabaseUtil * __databaseUtil;
 
 + (instancetype)sharedUtil
 {
-    @synchronized (self) {
-        if (!__databaseUtil) {
-            __databaseUtil = [[DLLDatabaseUtil alloc] initWithFilePath:[[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"database/database.sqlite"]];
-        }
-    }
+    static DLLDatabaseUtil *__databaseUtil;
+    static dispatch_once_t token = 0;
+    dispatch_once(&token, ^{
+        __databaseUtil = [[DLLDatabaseUtil alloc] initWithFilePath:[[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"database/database.sqlite"]];
+    });
     return __databaseUtil;
 }
 

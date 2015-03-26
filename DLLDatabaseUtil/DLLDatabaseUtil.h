@@ -14,7 +14,6 @@
     NSString *_dbPath;
     NSLock *_lock;
     BOOL _isTransaction;
-    NSString *_filePath;
 }
 
 /**
