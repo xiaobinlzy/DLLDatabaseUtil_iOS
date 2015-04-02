@@ -94,9 +94,9 @@
     return [self insertTalbe:tableName dataDictionary:dictionary logErrors:YES];
 }
 
-- (BOOL)updateTable:(NSString *)tableName dataDictionary:(NSDictionary *)dictionary withExtra:(NSString *)extra extraArg:(NSArray *)extraArg
+- (int)updateTable:(NSString *)tableName dataDictionary:(NSDictionary *)dictionary withExtra:(NSString *)extra extraArg:(NSArray *)extraArg
 {
-    BOOL result = NO;
+    int result = -1;
     NSMutableString *sql = [[NSMutableString alloc] initWithFormat:@"update \"%@\" set ", tableName];
     NSMutableArray *argArray = [[NSMutableArray alloc] init];
     NSEnumerator *keyEnumerator = [dictionary keyEnumerator];
@@ -116,6 +116,9 @@
     }
     [self open];
     result = [_db executeUpdate:sql withArgumentsInArray:argArray];
+    if (result) {
+        result = [_db changes];
+    }
     [self close];
     [argArray release];
     [sql release];
@@ -127,15 +130,18 @@
     return _db;
 }
 
-- (BOOL)deleteTable:(NSString *)tableName withExtra:(NSString *)extra extraArg:(NSArray *)extraArg
+- (int)deleteTable:(NSString *)tableName withExtra:(NSString *)extra extraArg:(NSArray *)extraArg
 {
-    BOOL result = NO;
+    int result = -1;
     NSMutableString *sql = [[NSMutableString alloc] initWithFormat:@"delete from \"%@\"", tableName];
     if (extra) {
         [sql appendFormat:@" %@", extra];
     }
     [self open];
     result = [_db executeUpdate:sql withArgumentsInArray:extraArg];
+    if (result) {
+        result = [_db changes];
+    }
     [self close];
     [sql release];
     return result;

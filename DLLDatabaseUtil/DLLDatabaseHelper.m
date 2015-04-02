@@ -120,24 +120,31 @@
 }
 
 #pragma mark - cache
-- (void)writeCache:(NSString *)info forType:(NSString *)type
+- (void)setCache:(NSString *)info forType:(NSString *)type
 {
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:type, @"type", info, @"info", [NSString stringWithFormat:@"%lld", (long long)[[NSDate date] timeIntervalSince1970]], @"time_line", nil];
-    if ([_databaseUtil insertTalbe:TABLE_CACHE dataDictionary:dict logErrors:NO] < 0) {
-        [_databaseUtil updateTable:TABLE_CACHE dataDictionary:dict withExtra:[NSString stringWithFormat:@"where \"type\"=\"%@\"", type] extraArg:nil];
+    if (type.length > 0) {
+        NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:type, @"type", info, @"info", [NSString stringWithFormat:@"%lld", (long long)[[NSDate date] timeIntervalSince1970]], @"time_line", nil];
+        if ([_databaseUtil insertTalbe:TABLE_CACHE dataDictionary:dict logErrors:NO] < 0) {
+            [_databaseUtil updateTable:TABLE_CACHE dataDictionary:dict withExtra:[NSString stringWithFormat:@"where \"type\"=\"%@\"", type] extraArg:nil];
+        }
     }
 }
 
 - (DLLDatabaseCache *)cacheForType:(NSString *)type
 {
-    NSArray *resultArray = [_databaseUtil queryTable:TABLE_CACHE columns:nil withExtra:[NSString stringWithFormat:@"where \"type\"=\"%@\"", type] extraArg:nil];
-    return resultArray.count > 0 ? [DLLDatabaseCache cacheObjectWithDatabaseDictionary:[resultArray firstObject]] : nil;
+    if (type.length > 0) {
+        NSArray *resultArray = [_databaseUtil queryTable:TABLE_CACHE columns:nil withExtra:[NSString stringWithFormat:@"where \"type\"=\"%@\"", type] extraArg:nil];
+        return resultArray.count > 0 ? [DLLDatabaseCache cacheObjectWithDatabaseDictionary:[resultArray firstObject]] : nil;
+    }
+    return nil;
 }
 
 
 - (void)deleteCacheType:(NSString *)type
 {
-    [_databaseUtil deleteTable:TABLE_CACHE withExtra:[NSString stringWithFormat:@"where \"type\"=\"%@\"", type] extraArg:nil];
+    if (type.length > 0) {
+        [_databaseUtil deleteTable:TABLE_CACHE withExtra:[NSString stringWithFormat:@"where \"type\"=\"%@\"", type] extraArg:nil];
+    }
 }
 
 @end

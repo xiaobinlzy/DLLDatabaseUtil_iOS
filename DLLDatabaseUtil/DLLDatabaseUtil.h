@@ -47,14 +47,14 @@
  **/
 - (long long) insertTalbe:(NSString *)tableName dataDictionary:(NSDictionary *)dictionary logErrors:(BOOL)logErrors;
 /**
- update语句更新数据，返回是否成功。
+ update语句更新数据，返回修改条数。如果失败则为-1。
  **/
-- (BOOL) updateTable:(NSString*)tableName dataDictionary:(NSDictionary*)dictionary withExtra:(NSString*)extra extraArg:(NSArray*)extraArg;
+- (int) updateTable:(NSString*)tableName dataDictionary:(NSDictionary*)dictionary withExtra:(NSString*)extra extraArg:(NSArray*)extraArg;
 
 /**
- delete语句删除数据，返回是否成功。
+ delete语句删除数据，返回修改条数。如果失败则为-1。
  **/
-- (BOOL) deleteTable:(NSString *)tableName withExtra:(NSString *)extra extraArg:(NSArray *)extraArg;
+- (int) deleteTable:(NSString *)tableName withExtra:(NSString *)extra extraArg:(NSArray *)extraArg;
 
 /**
  单表查询，返回查询结果。

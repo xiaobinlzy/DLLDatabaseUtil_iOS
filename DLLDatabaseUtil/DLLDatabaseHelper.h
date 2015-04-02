@@ -41,7 +41,7 @@
 
 
 #pragma mark - cache
-- (void)writeCache:(NSString *)info forType:(NSString *)type;
+- (void)setCache:(NSString *)info forType:(NSString *)type;
 - (DLLDatabaseCache *)cacheForType:(NSString *)type;
 - (void)deleteCacheType:(NSString *)type;
 @end
