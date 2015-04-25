@@ -139,6 +139,9 @@
     return nil;
 }
 
+- (void)clearCacheBeforeDate:(NSTimeInterval)date {
+    [_databaseUtil deleteTable:TABLE_CACHE withExtra:[NSString stringWithFormat:@"where \"time_line\"<%lld", (long long)date] extraArg:nil];
+}
 
 - (void)deleteCacheType:(NSString *)type
 {

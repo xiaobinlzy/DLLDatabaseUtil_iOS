@@ -44,6 +44,7 @@
 - (void)setCache:(NSString *)info forType:(NSString *)type;
 - (DLLDatabaseCache *)cacheForType:(NSString *)type;
 - (void)deleteCacheType:(NSString *)type;
+- (void)clearCacheBeforeDate:(NSTimeInterval)date;
 @end
 
 
